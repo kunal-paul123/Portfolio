@@ -1,6 +1,48 @@
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail } from "lucide-react";
+import { useState } from "react";
+import emailjs from "emailjs-com";
 
 const ContactSection = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [status, setStatus] = useState("");
+  const [loading, setLoading] = useState(false); // ✅ Loading state
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true); // ✅ Start loading
+    setStatus("");
+
+    emailjs
+      .send(
+        "service_m4ailyy", // from EmailJS
+        "template_od9pcsm", // from EmailJS
+        formData,
+        "jmGAD8DGeG2YrKkGS" // from EmailJS account
+      )
+      .then(
+        () => {
+          setStatus("✅ Message sent successfully!");
+          setFormData({ name: "", email: "", message: "" });
+          setLoading(false); // ✅ Stop loading
+        },
+        (error) => {
+          console.error(error);
+          setStatus("❌ Failed to send message.");
+          setLoading(false); // ✅ Stop loading
+        }
+      );
+  };
+
   return (
     <section className="max-w-4xl mx-auto py-12 px-6">
       <div className="text-center mb-10">
@@ -14,33 +56,55 @@ const ContactSection = () => {
         </p>
       </div>
 
-      <form className="bg-surface-elevated p-6 rounded-2xl shadow-card max-w-2xl mx-auto space-y-4">
+      <form
+        onSubmit={handleSubmit}
+        className="bg-surface-elevated p-6 rounded-2xl shadow-card max-w-2xl mx-auto space-y-4"
+      >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <input
             type="text"
+            name="name"
             placeholder="Your Name"
+            value={formData.name}
+            onChange={handleChange}
             className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+            required
           />
           <input
-            type="email"
-            placeholder="Your email address"
+            type="text"
+            name="email"
+            placeholder="Your Email"
+            value={formData.email}
+            onChange={handleChange}
             className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+            required
           />
         </div>
 
         <textarea
+          name="message"
           placeholder="Your Message"
+          value={formData.message}
+          onChange={handleChange}
           rows={5}
+          required
           className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
         ></textarea>
 
         <button
           type="submit"
-          className="w-full bg-primary text-white font-semibold py-3 rounded-lg shadow-md hover:bg-primary/90 transition-colors"
+          disabled={loading} // ✅ Disable while loading
+          className={`w-full font-semibold py-3 rounded-lg shadow-md transition-colors ${
+            loading
+              ? "bg-gray-400 cursor-not-allowed"
+              : "bg-primary text-white hover:bg-primary/90"
+          }`}
         >
-          Submit
+          {loading ? "Sending..." : "Submit"} {/* ✅ Show loading text */}
         </button>
-      </form>
+
+        {status && <p className="text-center mt-3 text-sm">{status}</p>}
+      </form>h
     </section>
   );
 };

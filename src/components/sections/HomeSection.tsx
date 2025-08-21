@@ -31,12 +31,6 @@ const HomeSection = () => {
             View My Work
             <ArrowRight size={18} />
           </button>
-          <button
-            onClick={() => navigate("/contact")}
-            className="inline-flex items-center gap-2 bg-surface-elevated text-text-primary px-6 py-3 rounded-lg font-medium hover:bg-accent transition-all duration-200 shadow-sm border border-border"
-          >
-            Get in Touch
-          </button>
         </div>
       </div>
 
