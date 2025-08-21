@@ -104,7 +104,7 @@ const ContactSection = () => {
         </button>
 
         {status && <p className="text-center mt-3 text-sm">{status}</p>}
-      </form>h
+      </form>
     </section>
   );
 };
