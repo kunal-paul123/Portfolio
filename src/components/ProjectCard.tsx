@@ -1,4 +1,4 @@
-import { Github, ExternalLink } from 'lucide-react';
+import { Github, ExternalLink } from "lucide-react";
 
 interface ProjectCardProps {
   title: string;
@@ -9,19 +9,19 @@ interface ProjectCardProps {
   imageUrl?: string;
 }
 
-const ProjectCard = ({ 
-  title, 
-  description, 
-  technologies, 
-  githubUrl, 
-  liveUrl, 
-  imageUrl 
+const ProjectCard = ({
+  title,
+  description,
+  technologies,
+  githubUrl,
+  liveUrl,
+  imageUrl,
 }: ProjectCardProps) => {
   return (
     <div className="bg-surface-elevated rounded-lg shadow-card hover:shadow-elevated transition-all duration-300 overflow-hidden group">
       {/* Project Image */}
       {imageUrl && (
-        <div className="aspect-video bg-muted overflow-hidden">
+        <div className="bg-muted overflow-hidden">
           <img
             src={imageUrl}
             alt={title}
@@ -29,7 +29,7 @@ const ProjectCard = ({
           />
         </div>
       )}
-      
+
       {/* Project Content */}
       <div className="p-6">
         <div className="flex items-start justify-between mb-3">
@@ -51,17 +51,18 @@ const ProjectCard = ({
                 href={liveUrl}
                 className="p-2 text-text-secondary hover:text-primary hover:bg-accent rounded-lg transition-all duration-200"
                 aria-label="View live project"
+                target="_blank"
               >
                 <ExternalLink size={18} />
               </a>
             )}
           </div>
         </div>
-        
+
         <p className="text-text-secondary mb-4 leading-relaxed">
           {description}
         </p>
-        
+
         {/* Technology Stack */}
         <div className="flex flex-wrap gap-2">
           {technologies.map((tech) => (

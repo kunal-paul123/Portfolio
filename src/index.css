@@ -9,7 +9,7 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Main color palette - warm, professional tones */
-    --background: 30 15% 97%;
+    /* --background: 30 15% 97%; */
     --foreground: 240 8% 15%;
 
     --card: 0 0% 100%;

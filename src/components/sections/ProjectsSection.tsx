@@ -1,47 +1,49 @@
-import ProjectCard from '../ProjectCard';
+import ProjectCard from "../ProjectCard";
+import chitchat from "@/assets/chitchat.png";
+import trendTrove from "@/assets/trendtrove.png";
+import weatherApp from "@/assets/weather.png";
 
 const ProjectsSection = () => {
   const projects = [
     {
-      title: 'CheatCode',
-      description: 'Practice for technical interviews using AI.',
-      technologies: ['NextJS', 'TailwindCSS', 'Vercel AI SDK'],
-      githubUrl: '#',
-      liveUrl: '#',
+      title: "Chitchat",
+      description:
+        "A real time messaging platform using MERN stack and Socket.IO.",
+      imageUrl: chitchat,
+      technologies: [
+        "React.js",
+        "Node.js",
+        "MongoDB",
+        "Express.js",
+        "Socket.IO",
+      ],
+      githubUrl: "https://github.com/kunal-paul123/ChitChat-frontend",
+      liveUrl: "https://chit-chat-frontend-sepia.vercel.app/",
     },
     {
-      title: 'NewDemy',
-      description: 'A learning management system to buy and sell courses.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
-      githubUrl: '#',
-      liveUrl: '#',
+      title: "TrendTrove",
+      description: "An Online ecommerce website.",
+      imageUrl: trendTrove,
+      technologies: ["React.js", "Node.js", "MongoDB", "Express.js"],
+      githubUrl: "https://github.com/kunal-paul123/TrendTrove",
+      liveUrl: "https://trendtrove-1-002i.onrender.com/",
     },
     {
-      title: 'Portfolio Website',
-      description: 'My personal portfolio showcasing my projects and skills.',
-      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
-      githubUrl: '#',
-      liveUrl: '#',
-    },
-    {
-      title: 'Task Manager Pro',
-      description: 'A collaborative task management application with real-time updates.',
-      technologies: ['React', 'Socket.io', 'PostgreSQL', 'Redux'],
-      githubUrl: '#',
-      liveUrl: '#',
+      title: "Web Weather App",
+      imageUrl: weatherApp,
+      description: "A web weather app in ReactJs using open weather API.",
+      technologies: ["React.js", "JavaScript", "OpenWeatherMap API"],
+      githubUrl: "https://github.com/kunal-paul123/react-weather-app",
+      liveUrl: "https://react-weather-app-vert-nine.vercel.app/",
     },
   ];
 
   return (
     <section className="max-w-6xl mx-auto">
       <div className="mb-8">
-        <h1 className="text-3xl lg:text-4xl font-bold text-text-primary mb-4">
+        <h1 className="text-3xl lg:text-4xl font-bold text-text-primary mb-4 text-center lg:text-left">
           My Projects
         </h1>
-        <p className="text-lg text-text-secondary leading-relaxed">
-          A collection of projects I've worked on, showcasing my skills in full-stack development,
-          UI/UX design, and modern web technologies.
-        </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
