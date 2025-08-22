@@ -3,10 +3,6 @@ import { useState } from "react";
 import emailjs from "emailjs-com";
 
 const ContactSection = () => {
-  const service_id = import.meta.env.VITE_SERVICE_ID;
-  const template_id = import.meta.env.VITE_TEMPLATE_ID;
-  const public_key = import.meta.env.VITE_PUBLIC_KEY;
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -26,18 +22,25 @@ const ContactSection = () => {
     setLoading(true);
     setStatus("");
 
-    emailjs.send(service_id, template_id, formData, public_key).then(
-      () => {
-        setStatus("✅ Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
-        setLoading(false); //
-      },
-      (error) => {
-        console.error(error);
-        setStatus("❌ Failed to send message.");
-        setLoading(false);
-      }
-    );
+    emailjs
+      .send(
+        "service_m4ailyy",
+        "template_od9pcsm",
+        formData,
+        "jmGAD8DGeG2YrKkGS"
+      )
+      .then(
+        () => {
+          setStatus("✅ Message sent successfully!");
+          setFormData({ name: "", email: "", message: "" });
+          setLoading(false); //
+        },
+        (error) => {
+          console.error(error);
+          setStatus("❌ Failed to send message.");
+          setLoading(false);
+        }
+      );
   };
 
   return (
