@@ -3,13 +3,17 @@ import { useState } from "react";
 import emailjs from "emailjs-com";
 
 const ContactSection = () => {
+  const service_id = import.meta.env.VITE_SERVICE_ID;
+  const template_id = import.meta.env.VITE_TEMPLATE_ID;
+  const public_key = import.meta.env.VITE_PUBLIC_KEY;
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
   const [status, setStatus] = useState("");
-  const [loading, setLoading] = useState(false); // ✅ Loading state
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -19,28 +23,21 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true); // ✅ Start loading
+    setLoading(true);
     setStatus("");
 
-    emailjs
-      .send(
-        "service_m4ailyy", // from EmailJS
-        "template_od9pcsm", // from EmailJS
-        formData,
-        "jmGAD8DGeG2YrKkGS" // from EmailJS account
-      )
-      .then(
-        () => {
-          setStatus("✅ Message sent successfully!");
-          setFormData({ name: "", email: "", message: "" });
-          setLoading(false); // ✅ Stop loading
-        },
-        (error) => {
-          console.error(error);
-          setStatus("❌ Failed to send message.");
-          setLoading(false); // ✅ Stop loading
-        }
-      );
+    emailjs.send(service_id, template_id, formData, public_key).then(
+      () => {
+        setStatus("✅ Message sent successfully!");
+        setFormData({ name: "", email: "", message: "" });
+        setLoading(false); //
+      },
+      (error) => {
+        console.error(error);
+        setStatus("❌ Failed to send message.");
+        setLoading(false);
+      }
+    );
   };
 
   return (
