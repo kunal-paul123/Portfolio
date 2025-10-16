@@ -6,7 +6,6 @@ const HomeSection = () => {
 
   return (
     <section className="max-w-4xl mx-auto">
-      {/* Hero Content */}
       <div className="mb-12">
         <div className="mb-6">
           <span className="text-4xl mb-4 block">👋</span>
@@ -22,7 +21,6 @@ const HomeSection = () => {
           </p>
         </div>
 
-        {/* CTA Buttons */}
         <div className="flex flex-wrap gap-4 mt-8">
           <button
             onClick={() => navigate("/projects")}

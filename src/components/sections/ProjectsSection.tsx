@@ -2,9 +2,27 @@ import ProjectCard from "../ProjectCard";
 import chitchat from "@/assets/chitchat.png";
 import trendTrove from "@/assets/trendtrove.png";
 import weatherApp from "@/assets/weather.png";
+import elevateAI from "./../../assets/elevateAI.png";
 
 const ProjectsSection = () => {
   const projects = [
+    {
+      title: "ElevateAI",
+      description: "Your AI Career Coach",
+      imageUrl: elevateAI,
+      technologies: [
+        "Next.js",
+        "Typescript",
+        "Tailwind CSS",
+        "Shadcn UI",
+        "PostgreSQL",
+        "Prisma",
+        "Inngest",
+        "Clerk",
+      ],
+      githubUrl: "https://github.com/kunal-paul123/ElevateAI",
+      liveUrl: "https://elevate-ai-omega.vercel.app/",
+    },
     {
       title: "Chitchat",
       description:

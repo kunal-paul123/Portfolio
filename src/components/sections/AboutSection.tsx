@@ -5,17 +5,25 @@ const AboutSection = () => {
     {
       category: "Frontend",
       icon: Globe,
-      technologies: ["HTML", "CSS", "JavaScript", "Tailwind CSS", "React"],
+      technologies: [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Typescript",
+        "Tailwind CSS",
+        "React.js",
+        "Next.js",
+      ],
     },
     {
       category: "Backend",
       icon: Database,
-      technologies: ["Node.js", "Express", "PostgreSQL", "MongoDB",],
+      technologies: ["Node.js", "Express", "PostgreSQL", "MongoDB"],
     },
     {
       category: "Tools",
       icon: Code,
-      technologies: ["Git", "Github", "Postman", "Docker"],
+      technologies: ["Git", "Github", "Postman", "Docker", "Prisma", "Inngest"],
     },
   ];
 

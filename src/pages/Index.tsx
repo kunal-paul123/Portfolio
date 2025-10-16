@@ -1,6 +1,5 @@
 import HomeSection from "@/components/sections/HomeSection";
 import ProjectCard from "@/components/ProjectCard";
-import chitchat from "@/assets/chitchat.png";
 
 const Index = () => {
   return (
@@ -12,17 +11,20 @@ const Index = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
               <ProjectCard
-                title="ChitChat"
-                description="A real time messaging platform using MERN stack and Socket.IO."
+                title="ElevateAI"
+                description="Your AI Career Coach"
                 technologies={[
-                  "React.js",
-                  "Node.js",
-                  "MongoDB",
-                  "Express.js",
-                  "Socket.IO",
+                  "Next.js",
+                  "Typescript",
+                  "Tailwind CSS",
+                  "Shadcn UI",
+                  "PostgreSQL",
+                  "Prisma",
+                  "Inngest",
+                  "Clerk",
                 ]}
-                githubUrl="https://github.com/kunal-paul123/ChitChat-frontend"
-                liveUrl="https://chit-chat-frontend-sepia.vercel.app/"
+                githubUrl="https://github.com/kunal-paul123/ElevateAI"
+                liveUrl="https://elevate-ai-omega.vercel.app/"
               />
               <ProjectCard
                 title="TrendTrove"
