@@ -29,7 +29,7 @@ const Index = () => {
               <ProjectCard
                 title="TrendTrove"
                 description="An Online ecommerce website."
-                technologies={["React.js", "Node.js", "MongoDB", "Express.js"]}
+                technologies={["React.js", "Node.js", "MongoDB", "Express.js", "AWS (S3, EC2)", "CloudFront", "Razorpay"]}
                 githubUrl="https://github.com/kunal-paul123/TrendTrove"
                 liveUrl="https://trendtrove.mooo.com/"
               />
