@@ -31,7 +31,7 @@ const Index = () => {
                 description="An Online ecommerce website."
                 technologies={["React.js", "Node.js", "MongoDB", "Express.js"]}
                 githubUrl="https://github.com/kunal-paul123/TrendTrove"
-                liveUrl="https://trendtrove-1-002i.onrender.com/"
+                liveUrl="https://trendtrove.mooo.com/"
               />
             </div>
           </div>

@@ -3,7 +3,7 @@ import { Code, Database, Globe, Smartphone } from "lucide-react";
 const AboutSection = () => {
   const skills = [
     {
-      category: "Frontend",
+      category: "Languages",
       icon: Globe,
       technologies: [
         "HTML",
@@ -11,19 +11,25 @@ const AboutSection = () => {
         "JavaScript",
         "Typescript",
         "Tailwind CSS",
-        "React.js",
-        "Next.js",
+        "C",
+        "Java",
+        "Python",
       ],
     },
     {
-      category: "Backend",
+      category: "Technologies/Frameworks",
       icon: Database,
-      technologies: ["Node.js", "Express", "PostgreSQL", "MongoDB"],
+      technologies: ["React.js", "Next.js", "Node.js", "Express.js", "AWS (S3, EC2)"],
     },
     {
-      category: "Tools",
+      category: "Databases",
       icon: Code,
-      technologies: ["Git", "Github", "Postman", "Docker", "Prisma", "Inngest"],
+      technologies: ["MongoDB", "PostgreSQL"],
+    },
+    {
+      category: "Developer Tools",
+      icon: Code,
+      technologies: ["Docker", "Git", "Github", "Postman", "Prisma", "Inngest"],
     },
   ];
 
